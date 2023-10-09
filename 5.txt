@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+public class ArrangeStringsInAlphabeticalOrder {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console.
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the number of strings.
+        System.out.println("Enter the number of strings:");
+        int numberOfStrings = scanner.nextInt();
+
+        // Create an array of strings.
+        String[] strings = new String[numberOfStrings];
+
+        // Prompt the user to enter the strings.
+        for (int i = 0; i < numberOfStrings; i++) {
+            System.out.println("Enter string " + (i + 1) + ": ");
+            strings[i] = scanner.nextLine();
+        }
+
+        // Sort the array of strings in alphabetical order.
+        Arrays.sort(strings);
+
+        // Display the sorted array of strings.
+        System.out.println("The sorted array of strings is:");
+        for (String string : strings) {
+            System.out.println(string);
+        }
+    }
+}

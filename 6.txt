@@ -1,0 +1,89 @@
+public class SearchStudent {
+    public static void main(String[] args) {
+        // Create an array of Student objects.
+        Student[] students = new Student[10];
+
+        // Initialize the Student objects.
+        students[0] = new Student("1234567890", "Alice", "Smith", "Computer Science");
+        students[1] = new Student("9876543210", "Bob", "Jones", "Mathematics");
+        students[2] = new Student("0123456789", "Carol", "Williams", "Physics");
+        students[3] = new Student("9012345678", "Dave", "Brown", "Chemistry");
+        students[4] = new Student("8102345679", "Eve", "Miller", "Biology");
+        students[5] = new Student("7210345678", "Frank", "Davis", "English");
+        students[6] = new Student("6321034567", "Grace", "Johnson", "History");
+        students[7] = new Student("5432103456", "Henry", "Taylor", "Economics");
+        students[8] = new Student("4543210345", "Ida", "Garcia", "Political Science");
+        students[9] = new Student("3654321034", "Jack", "Martin", "Psychology");
+
+        // Get the search string from the user.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the student's first name or last name to search for:");
+        String searchString = scanner.nextLine();
+
+        // Search for the student in the array.
+        Student foundStudent = null;
+        for (Student student : students) {
+            if (student.getFirstName().equals(searchString) || student.getLastName().equals(searchString)) {
+                foundStudent = student;
+                break;
+            }
+        }
+
+        // Display the student's details, if found.
+        if (foundStudent != null) {
+            System.out.println("Student found:");
+            System.out.println("Registration number: " + foundStudent.getRegistrationNumber());
+            System.out.println("First name: " + foundStudent.getFirstName());
+            System.out.println("Last name: " + foundStudent.getLastName());
+            System.out.println("Degree: " + foundStudent.getDegree());
+        } else {
+            System.out.println("No student found.");
+        }
+    }
+}
+
+class Student {
+    private String registrationNumber;
+    private String firstName;
+    private String lastName;
+    private String degree;
+
+    public Student(String registrationNumber, String firstName, String lastName, String degree) {
+        this.registrationNumber = registrationNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.degree = degree;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+}

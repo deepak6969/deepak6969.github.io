@@ -1,0 +1,102 @@
+import java.util.Scanner;
+
+public class MenuDrivenStringProgram {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console.
+        Scanner scanner = new Scanner(System.in);
+
+        // Display the menu.
+        System.out.println("Menu:");
+        System.out.println("1. Check if string is palindrome");
+        System.out.println("2. Write string in alphabetical order");
+        System.out.println("3. Reverse string");
+        System.out.println("4. Concatenate original string and reversed string");
+        System.out.println("Enter your choice:");
+
+        // Get the user's choice.
+        int choice = scanner.nextInt();
+
+        // Perform the selected operation.
+        switch (choice) {
+            case 1:
+                checkPalindrome(scanner);
+                break;
+            case 2:
+                writeInAlphabeticalOrder(scanner);
+                break;
+            case 3:
+                reverseString(scanner);
+                break;
+            case 4:
+                concatenateStrings(scanner);
+                break;
+            default:
+                System.out.println("Invalid choice.");
+                break;
+        }
+    }
+
+    private static void checkPalindrome(Scanner scanner) {
+        // Prompt the user to enter the string.
+        System.out.println("Enter the string:");
+        String string = scanner.nextLine();
+
+        // Reverse the string.
+        String reversedString = new StringBuilder(string).reverse().toString();
+
+        // Compare the original string and the reversed string.
+        if (string.equals(reversedString)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
+
+    private static void writeInAlphabeticalOrder(Scanner scanner) {
+        // Prompt the user to enter the string.
+        System.out.println("Enter the string:");
+        String string = scanner.nextLine();
+
+        // Convert the string to a character array.
+        char[] chars = string.toCharArray();
+
+        // Sort the character array.
+        Arrays.sort(chars);
+
+        // Convert the sorted character array back to a string.
+        String sortedString = new String(chars);
+
+        // Display the sorted string.
+        System.out.println("The sorted string is:");
+        System.out.println(sortedString);
+    }
+
+    private static void reverseString(Scanner scanner) {
+        // Prompt the user to enter the string.
+        System.out.println("Enter the string:");
+        String string = scanner.nextLine();
+
+        // Reverse the string.
+        String reversedString = new StringBuilder(string).reverse().toString();
+
+        // Display the reversed string.
+        System.out.println("The reversed string is:");
+        System.out.println(reversedString);
+    }
+
+    private static void concatenateStrings(Scanner scanner) {
+        // Prompt the user to enter the string.
+        System.out.println("Enter the string:");
+        String string = scanner.nextLine();
+
+        // Reverse the string.
+        String reversedString = new StringBuilder(string).reverse().toString();
+
+        // Concatenate the original string and the reversed string.
+        String concatenatedString = string + reversedString;
+
+        // Display the concatenated string.
+        System.out.println("The concatenated string is:");
+        System.out.println(concatenatedString);
+    }
+}
